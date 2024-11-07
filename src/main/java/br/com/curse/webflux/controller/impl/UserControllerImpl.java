@@ -4,6 +4,7 @@ import br.com.curse.webflux.controller.UserController;
 import br.com.curse.webflux.model.request.UserRequest;
 import br.com.curse.webflux.model.response.UserResponse;
 import br.com.curse.webflux.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,14 +13,11 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping(value = "/users")
 public class UserControllerImpl implements UserController {
 
     private final UserService service;
-
-    public UserControllerImpl(UserService service) {
-        this.service = service;
-    }
 
     @Override
     public ResponseEntity<Mono<Void>> save(UserRequest request) {
