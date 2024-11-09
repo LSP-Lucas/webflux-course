@@ -6,6 +6,7 @@ import br.com.curse.webflux.model.response.UserResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
+import org.reactivestreams.Publisher;
 
 import static org.mapstruct.NullValueCheckStrategy.*;
 import static org.mapstruct.NullValuePropertyMappingStrategy.*;
